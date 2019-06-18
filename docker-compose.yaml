@@ -2,7 +2,8 @@
 version: "3.4"
 services:
   web:
-    image: "${DOCKER_IMAGE_NAME:-hapi_fhir}:${DOCKER_IMAGE_TAG:-latest}"
+    image:
+      "${DOCKER_REPOSITORY-hapi-fhir/}${DOCKER_IMAGE_NAME:-hapi-fhir-jpaserver-starter}:${DOCKER_IMAGE_TAG:-latest}"
     build: .
     ports:
       - target: 8080
