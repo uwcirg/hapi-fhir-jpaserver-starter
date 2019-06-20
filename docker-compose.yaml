@@ -1,0 +1,11 @@
+---
+version: "3.4"
+services:
+  web:
+    image:
+      "${DOCKER_REPOSITORY-hapi-fhir/}${DOCKER_IMAGE_NAME:-hapi-fhir-jpaserver-starter}:${DOCKER_IMAGE_TAG:-latest}"
+    build: .
+    ports:
+      - target: 8080
+        # change as needed (eg reverse proxy) in .env
+        published: ${EXTERNAL_PORT:-8080}
