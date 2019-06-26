@@ -1,0 +1,9 @@
+# Adminer extension
+# add filename to COMPOSE_FILE entry in .env
+---
+version: "3.4"
+services:
+  adminer:
+    image: adminer
+    ports:
+      - ${ADMINER_EXTERNAL_PORT:-8008}:8080
